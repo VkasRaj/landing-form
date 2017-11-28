@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="./assets/images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon-precomposed" href="./assets/images/favicon/apple-touch-icon-152x152.png">
+    <meta name="msapplication-TileColor" content="#00bcd4">
+    <meta name="msapplication-TileImage" content="./assets/images/favicon/mstile-144x144.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Gloria+Hallelujah" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.css">
+    <title>KlickInvite | Welcome</title>
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <div class="navbar-fixed p-abs">
+        <nav class="bg-none z-100">
+            <div class="nav-wrapper px-2">
+                <a href="#0" class="brand-logo h-100 mt-1"><img src="./assets/images/ki_white.png" alt="" height="95%"></a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li class="amatic"><a class="font-1-8 pink" href="#0">Home</a></li>
+                    <li class="amatic"><a class="font-1-8 pink" href="#0">How It Works</a></li>
+                    <!-- <li class="amatic"><a class="font-1-8 pink" href="https://app.klickinvite.com/panel">Get Started</a></li> -->
+                    <!-- <li class="amatic"><a class="font-1-8 pink" href="">Contact Us</a></li> -->
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="#0"><i class="material-icons">home</i> Home</a></li>
+                    <li><a href="#0"><i class="material-icons">home</i> How It Works</a></li>
+                    <!-- <li><a href="https://app.klickinvite.com/panel"><i class="material-icons">arrow_forward</i> Get Started</a></li> -->
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- Navigation bar end-->
+
+    <!-- body -->
+    <div class="container h-100">
+        <div class="row h-100 mb-0">
+            <div class="col s12 m6 white-text h-100 valign-wrapper hide-on-small-only">
+                <div class="text">
+                    <blockquote><h2 class="text-shadow-4 gloria">Get A Demo Invite</h2></blockquote>
+                    <p class="flow-text text-shadow-4 font-2-5 amatic">Feel like a guest at your own event.<br>Send yourself a personalized demo invite.</p>
+                    <a href="#0"><button class="btn amatic pink font-2-5 btn-large">Get Started</button></a>
+                </div>
+            </div>
+            <div class="col s12 white-text valign-wrapper hide-on-med-and-up" style="transform: translateY(22%)">
+                <div class="text">
+                    <blockquote><h2 class="text-shadow-4 gloria">Get A Demo Invite</h2></blockquote>
+                    <p class="flow-text text-shadow-4 gloria font-2-5 amatic">Feel like a guest at your own event.<br>Send yourself a personalized demo invite.</p>
+                    <a href="#0"><button class="btn amatic pink font-2-5 btn-large">Get Started</button></a>
+                </div>
+            </div>
+            <div class="col s12 m6 h-100 valign-wrapper">
+                <form class="col s12" id="demo_user_form" name="demo_form">
+                    <div class="card">
+                        <div class="card-content px-3">
+                            <div class="row mb-0">
+                                <p class="center-align amatic font-3">Try it Out <i class="material-icons mx-1" style="font-size: 3rem">ondemand_video</i></p>
+                                <div class="input-field col s12">
+                                    <input id="demo_name" type="text" length="40" maxlength="40" class="validate" required onkeyup="onValidInput(event.target, validate_name,'Please remove special characters.')" onblur="onValidInput(event.target, validate_name,'Please remove special characters.')" placeholder="Maximum 40 characters">
+                                    <label for="demo_name" data-error="">Name</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input id="demo_email" type="email" class="validate" required validate onkeyup="onValidInput(event.target, validate_email,'Please enter a valid email address.')" onblur="onValidInput(event.target, validate_email,'Please enter a valid email address.')" placeholder="Ravi@example.com">
+                                    <label for="demo_email" data-error="">Email</label>
+                                </div>
+                               <div class="input-field col s12">
+                                    <input id="demo_mob" type="number" class="validate" required length="10" maxlength="10" placeholder="Valid 10 digit Indian mobile number" onkeyup="onValidInput(event.target, validate_mobile,'Please enter a valid Indian mobile number.')" onblur="onValidInput(event.target, validate_mobile,'Please enter a valid Indian mobile number.')">
+                                    <label for="demo_mob" data-error="">Mobile</label>
+                                </div>
+                                <div class="col s12 center-align">
+                                    <button class="btn pink amatic font-1-8" id="demo_submit_btn" onclick="demo_validate(event)">Get Demo</button>
+                                </div>
+                                <div class="progress col s12 input-field hide" style="background: rgba(233, 30, 99,.3)" id="progress_bar">
+                                    <div class="indeterminate pink"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="col s12" id="ecard_container" style="display:none">
+                    <div id="ecard_div" class="card">
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="col s12 center-align hide" id="only_ecard">
+                                    <p class="amatic font-3"><a href="" id="only_ecard_link" target="_blank"> Only <br> E-Card</a></p>
+                                </div>
+                                <div class="col s12 center-align hide" id="ecard_plus_invite">
+                                    <p class="amatic font-3"><a href="" id="ecard_plus_invite_link" target="_blank"> E-Card + Invite</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- can be user later -->
+    <!-- <div class="container h-100">
+        <div class="row">
+            <div class="col s12 m6 l6">
+                <div class="card">
+                    <div class="card-content">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, debitis?  ;ldfkjsdflkdsfjdsf;lkjsdf;ljdsf;sfjdf;lk Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque obcaecati sit unde accusamus ea, reprehenderit, magni quo quod culpa nemo totam impedit fuga iste cupiditate ad ut nihil deleniti animi!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l6">
+                <div class="card">
+                    <div class="card-content">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, debitis?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-content">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, debitis?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-content">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, debitis?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-content">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, debitis?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m6 l6">
+                <div class="card">
+                    <div class="card-content">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, debitis?  ;ldfkjsdflkdsfjdsf;lkjsdf;ljdsf;sfjdf;lk Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque obcaecati sit unde accusamus ea, reprehenderit, magni quo quod culpa nemo totam impedit fuga iste cupiditate ad ut nihil deleniti animi!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l6">
+                <div class="card">
+                    <div class="card-content">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, debitis?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-content">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, debitis?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-content">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, debitis?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-content">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, debitis?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="down-arrow p-fix hide-on-med-and-up" onclick="wScroll()" style="opacity: .8;">
+        <i class="material-icons medium z-depth-3">arrow_drop_down</i>
+    </div>
+
+   
+    <!-- <script> var id='<?php if(isset($_GET['id']) && trim($_GET['id'])!=""){ echo $_GET['id'];} else {echo -1;} ?>'</script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.js"></script>
+    <script src="./assets/js/demo.js"></script>
+</body>
+    <script>
+        if($(location).attr('hostname')=="app.klickinvite.com")
+        {
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-104476530-2', 'auto');
+            ga('send', 'pageview');
+
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window,document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '107262479991395');
+            fbq('track', 'PageView');
+        }
+    </script>
+</html>

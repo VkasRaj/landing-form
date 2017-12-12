@@ -28,7 +28,7 @@ html, body {
     position: relative;
 }
 body {
-    background: rgba(0, 0, 0, 0.2) url('../images/rings.jpg') no-repeat fixed center;
+    background: rgba(0, 0, 0, 0.2) url('../images/forestbridge.jpg') no-repeat fixed center;
     background-size: cover;
     background-blend-mode: overlay;
 }
@@ -68,7 +68,7 @@ nav {
     border: .1rem solid #fff;
 }
 blockquote {
-    border-left: .4rem solid #e91e63 !important;
+    border-left: .4rem solid #388E3C !important;
 }
 .bg-none {
     background: none !important;
@@ -123,7 +123,7 @@ blockquote {
 }
 .down-arrow .material-icons {
     background: white;
-    color: #e91e63;
+    color: #388E3C !important;
     border-radius: 50%;
     cursor: pointer;
     animation : upDown .5s infinite alternate;
